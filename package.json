@@ -1,0 +1,16 @@
+{
+  "name": "api-rest-js-practico",
+  "version": "1.0.0",
+  "description": "Curso practico de consumo de API Rest con javascript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proyecto01/api-rest-js-practico.git"
+  },
+  "author": "@gparatcha",
+  "license": "MIT",
+  "homepage": "https://github.com/Proyecto01/api-rest-js-practico#readme"
+}
