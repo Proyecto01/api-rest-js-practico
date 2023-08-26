@@ -67,7 +67,8 @@ function homePage() {
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
     
-    const [urlType, categoryData] = location.hash.split('='); //['#category', 'id-name']
+    //['#category', 'id-name']
+    const [_, categoryData] = location.hash.split('='); 
     const [categoryId, categoryName] = categoryData.split('-');
     headerCategoryTitle.innerHTML = categoryName;
     getMoviesByCategory(categoryId)
@@ -98,13 +99,16 @@ function homePage() {
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.remove('header-arrow--white');
     headerTitle.classList.add('inactive');
-    headerCategoryTitle.classList.remove('inactive');
-    searchForm.classList.remove('inactive');
+    headerCategoryTitle.classList.add('inactive'); 
   
     trendingPreviewSection.classList.add('inactive');
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    //['#search', 'vengadores']
+    const [_, query] = location.hash.split('=');
+    getMoviesBySearch(query);
   }
   
   function trendsPage() {
@@ -122,4 +126,7 @@ function homePage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    headerCategoryTitle.innerHTML = 'Tendencias';
+    getTrendingMovies();
   }
