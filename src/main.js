@@ -40,7 +40,7 @@ const api = axios.create({
     categories.forEach(category => {  
       const categoryContainer = document.createElement('div');
       categoryContainer.classList.add('category-container');
-  
+
       const categoryTitle = document.createElement('h3');
       categoryTitle.classList.add('category-title');
       categoryTitle.setAttribute('id', 'id' + category.id);
