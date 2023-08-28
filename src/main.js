@@ -37,11 +37,16 @@ const api = axios.create({
         lazyLoad ? 'data-img' : 'src',
         'https://image.tmdb.org/t/p/w300' + movie.poster_path,
       );
+      movieImg.addEventListener('error', () => {
+        movieImg.setAttribute(
+            'src',
+            'https://static.platzi.com/static/images/error/img404.png'
+        );
+      });
 
       if (lazyLoad) {
         lazyLoader.observe(movieImg);
       }
-      
 
       movieContainer.appendChild(movieImg);
       container.appendChild(movieContainer);
@@ -94,7 +99,7 @@ const api = axios.create({
     });
     const movies = data.results;
   
-    createMovies(movies, genericSection);
+    createMovies(movies, genericSection, true);
   }
   
   async function getMoviesBySearch(query) {
